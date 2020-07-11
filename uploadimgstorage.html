@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<body>
+    <script>
+        fetchImage().catch(exe => {
+            console.log(exe);
+        });
+        async function fetchImage(){
+            const response = await fetch('cats.jpg');
+            const blob = await response.blob();
+            document.getElementById("insert").src = URL.createObjectURL(blob);
+            
+        }
+        // fetch('cats.jpg')
+        // .then(response => {
+        //     console.log("entered fetch");
+        //     return response.blob();
+        // })
+        // .then(blob =>{
+        //     console.log( blob);
+        //     document.getElementById("insert").src = URL.createObjectURL(blob);
+    
+        // });
+    </script>
+    <img id ="insert" height="500" width="600"  src="">
+</body>
+</html>
